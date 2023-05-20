@@ -70,12 +70,34 @@ h4 {
   flex-direction: column;
   background-color: var(--dom);
 }
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+.btn {
+  width: 10rem;
+  background-color: var(--comp2);
+  color: var(--dom);
+  height: 5rem;
+  display: grid;
+  place-content: center;
+  border-radius: 30%;
+}
 .navbar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 0.3rem;
   background-color: var(--comp1);
   width: 100%;
+}
+.logo {
+  color: var(--accent);
+  font-size: 2rem;
 }
 .links-container {
   width: 100%;

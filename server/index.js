@@ -29,13 +29,24 @@ app.get("/api/get/trans", (req, res) => {
 });
 
 app.post("/api/update", (req, res) => {
-  const id1 = req.body.id1;
-  const id2 = req.body.id2;
+  const name1 = req.body.name1;
+  const name2 = req.body.name2;
   const amt1 = req.body.amt1;
   const amt2 = req.body.amt2;
-  const sqlUpdate = "Update bankdb set balance = ? where id = ?";
-  db.query(sqlUpdate, [amt1, id1], (err, result) => {});
-  db.query(sqlUpdate, [amt2, id2], (err, result) => {});
+  const amt = req.body.amt;
+  const sqlUpdate = "Update bankdb set balance = ? where name = ?";
+  db.query(sqlUpdate, [amt1, name1], (err, result) => {
+    console.log("Value Updated");
+  });
+  db.query(sqlUpdate, [amt2, name2], (err, result) => {
+    console.log("Value Updated");
+  });
+
+  const sqlInsert =
+    "INSERT INTO transaction (`from`, `to`, amount) VALUES (?, ?,?)";
+  db.query(sqlInsert, [name1, name2, amt], (err, result) => {
+    console.log("Value Added");
+  });
 });
 app.listen(3001, () => {
   console.log("Backend running");

@@ -20,11 +20,13 @@ const Transfer = () => {
       } else {
         let a = curr - amt;
         let b = data[toIndex].balance + parseInt(amt, 10);
+        console.log(data[toIndex]);
         axios.post("http://localhost:3001/api/update", {
-          id1: data[fromIndex].id,
-          id2: data[toIndex].id,
+          name1: data[fromIndex].name,
+          name2: data[toIndex].name,
           amt1: a,
           amt2: b,
+          amt: amt,
         });
       }
     }

@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="nav-header">
         <h4>
           <NavLink to="/" className="logo">
-            Bank
+            Spark
           </NavLink>
         </h4>
       </div>

@@ -10,12 +10,12 @@ const AppProvider = ({ children }) => {
     Axios.get("http://localhost:3001/api/get").then((response) => {
       setData(response.data);
     });
-  });
+  }, []);
   useEffect(() => {
     Axios.get("http://localhost:3001/api/get/trans").then((response) => {
       setTransact(response.data);
     });
-  });
+  }, []);
 
   return (
     <AppContext.Provider value={{ data, setData, transact, setTransact }}>
